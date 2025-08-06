@@ -1,0 +1,224 @@
+.file-upload {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.upload-section {
+  background: #111111;
+  border: 1px solid #333333;
+  border-radius: 0;
+  padding: 4rem;
+  margin-bottom: 4rem;
+}
+
+.upload-section h2 {
+  color: #FFFF00;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  font-weight: 200;
+  text-transform: none;
+  letter-spacing: 2px;
+}
+
+.file-input-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.file-input {
+  flex: 1;
+  padding: 1.5rem;
+  border: 1px solid #333333;
+  border-radius: 0;
+  background: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.file-input:hover {
+  border-color: #FFFF00;
+  background: #111111;
+}
+
+.upload-btn {
+  background: #FFFF00;
+  color: #000000;
+  border: none;
+  padding: 1.5rem 3rem;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-transform: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.upload-btn:hover:not(:disabled) {
+  background: #ffffff;
+  color: #000000;
+}
+
+.upload-btn:disabled {
+  background: #333333;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.file-info {
+  background: #111111;
+  border: 1px solid #333333;
+  border-radius: 0;
+  padding: 2rem;
+  color: #FFFF00;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.analysis-section {
+  background: #111111;
+  border: 1px solid #333333;
+  border-radius: 0;
+  padding: 4rem;
+}
+
+.analysis-section h3 {
+  color: #FFFF00;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  font-weight: 200;
+  text-transform: none;
+  letter-spacing: 2px;
+}
+
+.save-controls {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  padding: 3rem;
+  background: #000000;
+  border: 1px solid #333333;
+}
+
+.title-input, .folder-select, .new-folder-input {
+  padding: 1.5rem;
+  border: 1px solid #333333;
+  border-radius: 0;
+  font-size: 1.1rem;
+  background: #000000;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.title-input:focus, .folder-select:focus, .new-folder-input:focus {
+  outline: none;
+  border-color: #FFFF00;
+  background: #111111;
+}
+
+.new-folder-section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.new-folder-input {
+  flex: 1;
+}
+
+.create-folder-btn {
+  background: #FFFF00;
+  color: #000000;
+  border: none;
+  padding: 1.5rem 2rem;
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-transform: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.create-folder-btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.reanalyze-btn, .clear-btn {
+  border: none;
+  padding: 1.5rem 2.5rem;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-transform: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+
+.reanalyze-btn {
+  background: #00AAFF;
+  color: #ffffff;
+}
+
+.reanalyze-btn:hover:not(:disabled) {
+  background: #0088CC;
+  color: #ffffff;
+}
+
+.reanalyze-btn:disabled {
+  background: #333333;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.clear-btn {
+  background: #FF4444;
+  color: #ffffff;
+}
+
+.clear-btn:hover {
+  background: #CC3333;
+  color: #ffffff;
+}
+
+
+.analysis-content {
+  background: #000000;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 2rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.analysis-content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin: 0;
+  max-width: 100%;
+  hyphens: auto;
+}

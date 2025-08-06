@@ -1,0 +1,601 @@
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background: #111111;
+  border-right: 1px solid #333333;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #333333;
+  flex-shrink: 0;
+}
+
+.sidebar-header h2 {
+  color: #FFFF00;
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-transform: none;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.folder-stats {
+  color: #888888;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.back-button-container {
+  margin-top: 0.5rem;
+}
+
+.back-to-parent-btn {
+  background: #333333;
+  border: 1px solid #555555;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.back-to-parent-btn:hover {
+  background: #444444;
+  border-color: #666666;
+}
+
+.new-folder-section {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #333333;
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.new-folder-input {
+  flex: 1;
+  background: #000000;
+  border: 1px solid #333333;
+  border-radius: 0;
+  padding: 0.75rem;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.new-folder-input:focus {
+  outline: none;
+  border-color: #FFFF00;
+}
+
+.new-folder-input::placeholder {
+  color: #666666;
+}
+
+.create-folder-btn {
+  background: #FFFF00;
+  color: #000000;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.create-folder-btn:hover:not(:disabled) {
+  background: #ffffff;
+}
+
+.create-folder-btn:disabled {
+  background: #333333;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.folders-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+  min-height: 0;
+}
+
+.folder-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.folder-item:hover {
+  background: #1a1a1a;
+  border-left-color: #333333;
+}
+
+.folder-item.active {
+  background: #1a1a1a;
+  border-left-color: #FFFF00;
+}
+
+.folder-info {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.folder-name {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+  text-transform: none;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.folder-item.active .folder-name {
+  color: #FFFF00;
+}
+
+/* Subcarpetas inline */
+.subfolder-item {
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid #444444;
+  padding: 0.5rem 1rem 0.5rem 2rem;
+}
+
+.subfolder-item:hover {
+  background: rgba(26, 26, 26, 0.8);
+  border-left-color: #555555;
+}
+
+.subfolder-item.active {
+  background: rgba(26, 26, 26, 0.9);
+  border-left-color: #FFFF00;
+}
+
+.subfolder-indent {
+  color: #666666;
+  font-family: monospace;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+/* Contenedor de botones */
+.folder-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.folder-item:hover .folder-buttons {
+  opacity: 1;
+}
+
+/* Botón de expandir/contraer */
+.expand-folder-btn {
+  background: none;
+  border: none;
+  color: #666666;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.expand-folder-btn:hover {
+  color: #ffffff;
+  background: #333333;
+}
+
+/* Botón volver pequeño */
+.back-folder-btn {
+  background: none;
+  border: none;
+  color: #666666;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.back-folder-btn:hover {
+  color: #ffffff;
+  background: #333333;
+}
+
+.folder-count {
+  color: #888888;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.delete-folder-btn {
+  background: none;
+  border: none;
+  color: #666666;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.folder-item:hover .delete-folder-btn {
+  opacity: 1;
+}
+
+.delete-folder-btn:hover {
+  color: #ffffff;
+  background: #333333;
+}
+
+.empty-folders {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #666666;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-folders p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  color: #888888;
+}
+
+.empty-folders small {
+  font-size: 0.85rem;
+  color: #666666;
+}
+
+.sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid #333333;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.quick-stats {
+  display: flex;
+  justify-content: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-value {
+  color: #FFFF00;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  color: #888888;
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-transform: none;
+}
+
+/* Subfolder functionality */
+.folder-icon {
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.subfolder-indicator {
+  font-size: 0.65rem;
+  color: #666666;
+  font-weight: 300;
+}
+
+.navigate-folder-btn,
+.create-subfolder-btn {
+  background: none;
+  border: none;
+  color: #666666;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: all 0.2s ease;
+  margin-left: 0.25rem;
+}
+
+.folder-item:hover .navigate-folder-btn,
+.folder-item:hover .create-subfolder-btn {
+  opacity: 1;
+}
+
+.navigate-folder-btn:hover,
+.create-subfolder-btn:hover {
+  color: #ffffff;
+  background: #333333;
+}
+
+.create-subfolder-btn {
+  font-size: 0.8rem;
+}
+
+.nav-into-btn {
+  background: none;
+  border: none;
+  color: #666666;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.folder-item:hover .nav-into-btn {
+  opacity: 1;
+}
+
+.nav-into-btn:hover {
+  color: #ffffff;
+  background: #333333;
+}
+
+/* Breadcrumb navigation */
+.sidebar-breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.breadcrumb-home,
+.breadcrumb-folder {
+  background: none;
+  border: none;
+  color: #888888;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.breadcrumb-home:hover,
+.breadcrumb-folder:hover {
+  color: #FFFF00;
+  background: #1a1a1a;
+}
+
+.breadcrumb-sep {
+  color: #555555;
+  margin: 0 0.25rem;
+}
+
+/* Subfolder creation modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.subfolder-modal {
+  background: #111111;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #333333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header h3 {
+  color: #FFFF00;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #666666;
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #ffffff;
+  background: #333333;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.parent-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+.parent-label {
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+.parent-name {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.subfolder-input {
+  width: 100%;
+  background: #000000;
+  border: 1px solid #333333;
+  border-radius: 4px;
+  padding: 0.75rem;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.subfolder-input:focus {
+  outline: none;
+  border-color: #FFFF00;
+}
+
+.subfolder-input::placeholder {
+  color: #666666;
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #333333;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.cancel-btn,
+.create-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 300;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn {
+  background: #333333;
+  color: #ffffff;
+}
+
+.cancel-btn:hover {
+  background: #444444;
+}
+
+.create-btn {
+  background: #FFFF00;
+  color: #000000;
+}
+
+.create-btn:hover:not(:disabled) {
+  background: #ffffff;
+}
+
+.create-btn:disabled {
+  background: #333333;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 250px;
+  }
+  
+  .folder-item {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .sidebar-header {
+    padding: 1.5rem;
+  }
+
+  .subfolder-modal {
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+  }
+
+  .cancel-btn,
+  .create-btn {
+    width: 100%;
+  }
+}

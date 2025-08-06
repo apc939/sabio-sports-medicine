@@ -1,0 +1,413 @@
+.dashboard {
+  margin-left: 300px;
+  width: calc(100vw - 300px);
+  height: 100vh;
+  background: #000000;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.overview-section, .upload-section, .summaries-section, .research-section {
+  width: 100%;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.welcome-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  flex-shrink: 0;
+}
+
+.welcome-header h1 {
+  color: #FFFF00;
+  font-size: 3.5rem;
+  font-weight: 200;
+  margin-bottom: 1rem;
+  text-transform: none;
+  letter-spacing: -1px;
+}
+
+.welcome-header p {
+  color: #888888;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.highlight-sabio {
+  color: #FFFFFF;
+  font-weight: 400;
+  text-shadow: 0 0 15px #FFFF00;
+  letter-spacing: 3px;
+  font-size: 5.5rem;
+}
+
+.author-credit {
+  color: #666666;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333333;
+  flex-shrink: 0;
+}
+
+.section-header h2 {
+  color: #FFFF00;
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-transform: none;
+  letter-spacing: 1px;
+}
+
+.back-btn, .upload-btn, .save-btn, .generate-btn, .discard-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.back-btn {
+  background: none;
+  border: 1px solid #333333;
+  color: #888888;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.back-btn:hover {
+  border-color: #FFFF00;
+  color: #FFFF00;
+}
+
+.upload-btn, .save-btn, .generate-btn {
+  background: #FFFF00;
+  color: #000000;
+  padding: 1.5rem 3rem;
+  font-size: 1.1rem;
+}
+
+.discard-btn {
+  background: #FF6B00;
+  color: #ffffff;
+  padding: 1.5rem 3rem;
+  font-size: 1.1rem;
+}
+
+.upload-btn:hover:not(:disabled), .save-btn:hover:not(:disabled), .generate-btn:hover:not(:disabled) {
+  background: #FFFFFF;
+}
+
+.discard-btn:hover {
+  background: #E55A00;
+  color: #ffffff;
+}
+
+.upload-btn:disabled, .save-btn:disabled, .generate-btn:disabled {
+  background: #333333;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.current-folder-info, .platform-guide, .upload-area, .analysis-result, 
+.folder-empty-state, .generate-section, .state-of-art-result {
+  background: #111111;
+  border: 1px solid #333333;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.current-folder-info {
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  display: inline-block;
+}
+
+.upload-area, .generate-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 4rem;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-shrink: 0;
+}
+
+.action-card {
+  background: #111111;
+  border: 1px solid #333333;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.action-card:hover {
+  border-color: #FFFF00;
+  background: #1a1a1a;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 255, 0, 0.2);
+}
+
+.action-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.action-card:hover .action-icon {
+  transform: scale(1.2) rotateY(15deg);
+  filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.5));
+}
+
+.action-card h3 {
+  color: #FFFF00;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+  text-transform: none;
+  letter-spacing: 1px;
+}
+
+.action-card p {
+  color: #888888;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  display: inline-block;
+  background: #000000;
+  border: 1px solid #333333;
+  color: #888888;
+  padding: 2rem 3rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  text-transform: none;
+  transition: all 0.3s ease;
+  min-width: 300px;
+}
+
+.file-label:hover {
+  border-color: #FFFF00;
+  color: #FFFF00;
+}
+
+.title-input {
+  background: #000000;
+  border: 1px solid #333333;
+  color: #FFFFFF;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.title-input:focus {
+  outline: none;
+  border-color: #FFFF00;
+}
+
+.summaries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.summary-card {
+  background: #111111;
+  border: 1px solid #333333;
+  transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+  border-color: #FFFF00;
+}
+
+.summary-header {
+  padding: 2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333333;
+}
+
+.summary-header h4 {
+  color: #FFFF00;
+  font-size: 1.3rem;
+  font-weight: 300;
+  flex: 1;
+  text-align: left;
+}
+
+.summary-content-expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  backdrop-filter: blur(5px);
+}
+
+.summary-text {
+  flex: 1;
+  background: #111111;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 2rem;
+  color: #FFFFFF;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-height: calc(100vh - 8rem);
+}
+
+.delete-btn {
+  background: #333333;
+  border: 1px solid #555555;
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #ff4444;
+  border-color: #ff6666;
+}
+
+/* Fix para el contenido de análisis que se desborda */
+.analysis-content {
+  background: #000000;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 2rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.analysis-content pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin: 0;
+  max-width: 100%;
+  hyphens: auto;
+}
+
+/* Header del modal expandido */
+.summary-header-modal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 2rem 0;
+  border-bottom: 1px solid #333333;
+  margin-bottom: 2rem;
+}
+
+.summary-header-modal h3 {
+  color: #FFFF00;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0;
+  flex: 1;
+}
+
+/* Botón de cierre para el modal de summary expandido */
+.summary-close-btn {
+  background: #FFFF00;
+  color: #000000;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.summary-close-btn:hover {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    margin-left: 250px;
+    width: calc(100vw - 250px);
+    padding: 0.5rem;
+  }
+  
+  .welcome-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .welcome-header p {
+    font-size: 1.3rem;
+  }
+  
+  .highlight-sabio {
+    font-size: 4rem;
+  }
+  
+  .quick-actions {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .action-card {
+    padding: 1rem;
+  }
+}

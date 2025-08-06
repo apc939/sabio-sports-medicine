@@ -1,0 +1,60 @@
+.sidebar-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-home, .breadcrumb-folder {
+  background: none;
+  border: none;
+  color: #888888;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-home:hover, .breadcrumb-folder:hover {
+  color: #FFFF00;
+}
+
+.breadcrumb-home {
+  color: #FFFF00;
+  font-size: 1rem;
+}
+
+.breadcrumb-sep {
+  color: #555555;
+  font-size: 0.7rem;
+}
+
+.subfolder-indicator {
+  color: #888888;
+  font-size: 0.8rem;
+}
+
+.navigate-folder-btn {
+  background: none;
+  border: none;
+  color: #666666;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  opacity: 0;
+  transition: all 0.2s ease;
+  margin-right: 0.5rem;
+}
+
+.folder-item:hover .navigate-folder-btn {
+  opacity: 1;
+}
+
+.navigate-folder-btn:hover {
+  color: #FFFF00;
+}

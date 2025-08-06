@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(npx create-react-app:*)",
+      "Bash(mkdir:*)",
+      "Bash(lsof:*)",
+      "Bash(curl:*)",
+      "Bash(node server.js)",
+      "Bash(find . -name \"*.css\" -exec sed -i '' 's/text-transform: lowercase;/text-transform: none;/g' {} ;)",
+      "Bash(npm start)",
+      "Bash(node:*)",
+      "Bash(sqlite3:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(open \"/Users/andresp.ch./Desktop/App Sabio Sports Medicine/dist\")",
+      "Bash(ls:*)",
+      "Bash(npx asar list:*)",
+      "Bash(chmod:*)",
+      "Bash(rm:*)",
+      "Bash(find:*)",
+      "Bash(timeout:*)",
+      "Bash(pkill:*)"
+    ],
+    "deny": []
+  }
+}
