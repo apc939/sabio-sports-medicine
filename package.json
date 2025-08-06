@@ -1,83 +1,20 @@
 {
-  "name": "sabio-sports-medicine",
+  "name": "sabio-sports-medicine-bolt",
   "version": "1.0.0",
-  "description": "Literatura científica y recursos para medicina del deporte",
-  "main": "electron-working.js",
+  "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server.js",
-    "client": "cd client && npm start",
-    "build": "cd client && npm run build",
-    "install-all": "npm install && cd client && npm install",
-    "electron": "electron .",
-    "electron-dev": "concurrently \"npm run server\" \"npm run client\" \"wait-on http://localhost:3000 && electron .\"",
-    "build-electron": "npm run build && electron-builder",
-    "dist": "npm run build && electron-builder --publish=never"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.0",
-    "multer": "^1.4.5-lts.1",
-    "openai": "^4.67.1",
-    "pdf-parse": "^1.1.1",
-    "sqlite3": "^5.1.7",
-    "uuid": "^10.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "concurrently": "^9.0.1",
-    "electron": "^37.2.5",
-    "electron-builder": "^26.0.12",
-    "electron-is-dev": "^3.0.1",
-    "nodemon": "^3.1.4",
-    "wait-on": "^8.0.4"
-  },
-  "keywords": [
-    "medicina del deporte",
-    "literatura científica",
-    "AI",
-    "resúmenes"
-  ],
-  "author": "Sabio Sports Medicine",
-  "license": "MIT",
-  "build": {
-    "appId": "com.sabio.sports-medicine",
-    "productName": "Sabio Sports Medicine",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "electron-working.js",
-      "server.js",
-      "sports_medicine.db",
-      ".env",
-      "node_modules/**/*",
-      "client/build/**/*"
-    ],
-    "asarUnpack": [
-      "server.js",
-      "sports_medicine.db",
-      ".env",
-      "node_modules/sqlite3/**/*"
-    ],
-    "mac": {
-      "category": "public.app-category.medical",
-      "target": [
-        {
-          "target": "dmg",
-          "arch": [
-            "x64",
-            "arm64"
-          ]
-        }
-      ]
-    },
-    "win": {
-      "target": "nsis"
-    },
-    "linux": {
-      "target": "AppImage"
-    }
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8"
   }
 }

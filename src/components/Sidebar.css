@@ -1,0 +1,149 @@
+.sidebar {
+  width: 300px;
+  height: 100vh;
+  background: #111111;
+  border-right: 1px solid #333333;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #333333;
+  flex-shrink: 0;
+}
+
+.sidebar-header h2 {
+  color: #FFFF00;
+  font-size: 1.5rem;
+  font-weight: 200;
+  text-transform: none;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.folder-stats {
+  color: #888888;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.folders-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+  min-height: 0;
+}
+
+.folder-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.folder-item:hover {
+  background: #1a1a1a;
+  border-left-color: #333333;
+}
+
+.folder-item.active {
+  background: #1a1a1a;
+  border-left-color: #FFFF00;
+}
+
+.folder-info {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.folder-name {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+  text-transform: none;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 180px;
+}
+
+.folder-item.active .folder-name {
+  color: #FFFF00;
+}
+
+.folder-icon {
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.subfolder-indicator {
+  font-size: 0.65rem;
+  color: #666666;
+  font-weight: 300;
+}
+
+.folder-count {
+  color: #888888;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.sidebar-footer {
+  padding: 1rem;
+  border-top: 1px solid #333333;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.quick-stats {
+  display: flex;
+  justify-content: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-value {
+  color: #FFFF00;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  color: #888888;
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-transform: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 250px;
+  }
+  
+  .folder-item {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .sidebar-header {
+    padding: 1.5rem;
+  }
+}
