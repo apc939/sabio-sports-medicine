@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server.cjs",
+    "client": "cd client && npm start",
     "build": "vite build",
     "preview": "vite preview"
   },
