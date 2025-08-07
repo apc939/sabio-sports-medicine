@@ -33,8 +33,8 @@ function createWindow() {
   });
 
   // Verificar si el servidor existe (puede estar en app.asar.unpacked)
-  let serverPath = path.join(__dirname, 'server.js');
-  const unpackedPath = path.join(__dirname, '..', 'app.asar.unpacked', 'server.js');
+  let serverPath = path.join(__dirname, 'server.cjs');
+  const unpackedPath = path.join(__dirname, '..', 'app.asar.unpacked', 'server.cjs');
   
   // Verificar si está en unpacked primero
   try {

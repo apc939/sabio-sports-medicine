@@ -39,7 +39,7 @@ function startServer() {
   }
   
   // Iniciar servidor en producción
-  const serverPath = path.join(__dirname, 'server.js');
+  const serverPath = path.join(__dirname, 'server.cjs');
   
   // Verificar que el archivo del servidor existe
   try {

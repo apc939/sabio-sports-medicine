@@ -46,7 +46,7 @@ function startServer() {
     console.log('✅ Gemini API Key configurada');
   }
 
-  const serverPath = path.join(__dirname, 'server.js');
+  const serverPath = path.join(__dirname, 'server.cjs');
   
   const serverProcess = spawn(process.execPath, [serverPath], {
     env: { ...process.env, PORT: 5001 },
