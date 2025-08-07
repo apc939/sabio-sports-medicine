@@ -5,11 +5,11 @@
   "main": "electron-main.js",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "vite",
     "server": "nodemon server.cjs",
     "client": "cd client && npm start",
-    "start": "electron .",
     "build": "cd client && npm run build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
